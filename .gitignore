@@ -3,3 +3,4 @@ backend/node_modules/
 backend/dist/
 .DS_Store
 frontend/.vscode/settings.json
+backend/yarn-error.log
