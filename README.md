@@ -1,4 +1,4 @@
-# hello-mern-wordle
+# wordle-lite
 
 ## Developer Environment
 
@@ -13,4 +13,4 @@
 
 ## FYI
 
-* I'm using this repo as an exercise to learn the MERN stack a little better
+* I'm using this repo as an exercise to learn the MERN stack.
