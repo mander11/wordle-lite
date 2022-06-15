@@ -4,7 +4,7 @@ import GuessResult from "./GuessResult.js";
 const GuessInput = () => {
   const [guessName, setGuessName] = useState("");
   const [finalGuessName, setFinalGuessName] = useState("");
-  const [guessCorrectness, setGuessCorrectness] = useState("");
+  const [guessCorrectness, setGuessCorrectness] = useState(false);
 
   async function checkGuess() {
     setFinalGuessName(guessName);
