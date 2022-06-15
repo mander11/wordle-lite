@@ -20,7 +20,7 @@ app.post('/api/guess', function(req, res) {
   let guess = req.body.guessName
   let isGuessCorrect = guess === ANSWER
   console.log(`The current guess is... ${guess}`)
-  return res.send({ isGuessCorrect: isGuessCorrect })
+  return res.send({ isGuessCorrect })
 })
 
 export const start = async () => {
