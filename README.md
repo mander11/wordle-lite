@@ -2,7 +2,7 @@
 
 ## Developer Environment
 
-* For the backend service, run "cd backend && yarn install && yarn dev".  
+* For the backend service, run "cd backend && npm install && npm run dev".  
 
 * For the database, the backend service expects a local instance of MongoDB running on port 27017.
 
