@@ -2,4 +2,4 @@
 
 ## backend-service
 
-For the backend service, run "yarn install && yarn dev".  
+For the backend service, run "npm install && npm run dev".  
