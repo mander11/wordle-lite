@@ -1,11 +1,12 @@
 const GuessResult = (props) => {
+  const blankText = '';
+  const resultText = props.guessCorrectness ? 'Nice!' : 'Oh... roasted...  Try again if you dare!';
   return (
     <div>
-      <h1>Your guess was... {props.finalGuessName}</h1>
-      <h2>
-        The result of your guess being correct was...{" "}
-        {props.guessCorrectness.toString()}
-      </h2>
+      {props.guessSubmitted ? 
+        <h3>{resultText}</h3> :
+        <h3>{blankText}</h3>
+      }
     </div>
   );
 };

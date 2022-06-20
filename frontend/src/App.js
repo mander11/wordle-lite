@@ -6,8 +6,10 @@ import { useState } from "react";
 const App = () => {
   const [finalGuessName, setFinalGuessName] = useState("");
   const [guessCorrectness, setGuessCorrectness] = useState(false);
+  const [guessSubmitted, setGuessSubmitted] = useState(false);
 
   async function checkGuess(guessName) {
+    setGuessSubmitted(true);
     setFinalGuessName(guessName);
     const res = await fetch(`http://localhost:3001/api/guess/`, {
       method: "POST",
@@ -27,6 +29,7 @@ const App = () => {
       <GuessResult
         finalGuessName={finalGuessName}
         guessCorrectness={guessCorrectness}
+        guessSubmitted={guessSubmitted}
       />
     </div>
   );
