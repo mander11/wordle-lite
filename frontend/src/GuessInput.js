@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-// const GuessInput = ({ checkGuess }, { setGuessSubmitted }) => {
-const GuessInput = (props) => {
+const GuessInput = ({ setFinalGuessName }) => {
   const [guessName, setGuessName] = useState("");
 
   return (
@@ -10,7 +9,7 @@ const GuessInput = (props) => {
         onSubmit={(e) => {
           e.preventDefault();
           {
-            props.checkGuess(guessName);
+            setFinalGuessName(guessName);
           }
         }}
       >
@@ -22,7 +21,7 @@ const GuessInput = (props) => {
           onChange={(e) => {
             setGuessName(e.target.value);
             {
-              props.setGuessSubmitted(false);
+              setFinalGuessName("");
             }
           }}
         />
