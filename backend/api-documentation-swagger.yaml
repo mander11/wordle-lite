@@ -32,6 +32,25 @@ paths:
           description: "Informs user if guess was correct."
           schema:
             $ref: "#/definitions/GuessResponse"
+  /guess/v2:
+    post:
+      tags:
+        - "guess"
+      summary: "Guess the wordle of the day - and get letter feedback"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            $ref: "#/definitions/GuessRequest"
+      responses:
+        "200":
+          description: "Informs the user details about each letter of the guess."
+          schema:
+            $ref: "#/definitions/GuessResponseV2"
   /solution:
     post:
       tags:
@@ -79,6 +98,20 @@ definitions:
     properties:
       isGuessCorrect:
         type: "boolean"
+  GuessResponseV2:
+    type: "array"
+    items:
+      type: "object"
+      properties:
+        letter:
+          type: "string"
+          example: "a"
+        position:
+          type: "int"
+          example: 0
+        isPresent:
+          type: "boolean"
+          example: true
   Solution:
     type: "object"
     properties:

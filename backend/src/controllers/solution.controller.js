@@ -1,4 +1,4 @@
-import { createOne, updateOne } from '../services/solution.service'
+import { createOne, updateOne } from '../repositories/solution.repository'
 
 export const create = async (req, res) => {
   let newSolution = { solutionValue: req.body.solutionValue }

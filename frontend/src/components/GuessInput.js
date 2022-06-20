@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GuessInput = ({ checkGuess }) => {
+const GuessInput = ({ setFinalGuessName }) => {
   const [guessName, setGuessName] = useState("");
 
   return (
@@ -8,7 +8,9 @@ const GuessInput = ({ checkGuess }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          checkGuess(guessName);
+          {
+            setFinalGuessName(guessName);
+          }
         }}
       >
         <input
@@ -16,7 +18,12 @@ const GuessInput = ({ checkGuess }) => {
           id="guess"
           value={guessName}
           name="guessName"
-          onChange={(e) => setGuessName(e.target.value)}
+          onChange={(e) => {
+            setGuessName(e.target.value);
+            {
+              setFinalGuessName("");
+            }
+          }}
         />
         <button type="submit">Submit</button>
       </form>

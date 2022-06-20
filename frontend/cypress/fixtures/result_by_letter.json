@@ -1,0 +1,17 @@
+[
+    {
+        "letter": "f",
+        "position": 0,
+        "isPresent": true
+    },
+    {
+        "letter": "o",
+        "position": 1,
+        "isPresent": true
+    },
+    {
+        "letter": "z",
+        "position": 2,
+        "isPresent": false
+    }
+]
