@@ -9,7 +9,6 @@ const App = () => {
   const [guessSubmitted, setGuessSubmitted] = useState(false);
 
   async function checkGuess(guessName) {
-    setGuessSubmitted(true);
     setFinalGuessName(guessName);
     const res = await fetch(`http://localhost:3001/api/guess/`, {
       method: "POST",
@@ -20,12 +19,16 @@ const App = () => {
     });
     const json = await res.json();
     setGuessCorrectness(json.isGuessCorrect);
+    setGuessSubmitted(true);
   }
 
   return (
     <div>
       <h2>Try to the guess the wordle of the day!</h2>
-      <GuessInput checkGuess={checkGuess} />
+      <GuessInput
+        checkGuess={checkGuess}
+        setGuessSubmitted={setGuessSubmitted}
+      />
       <GuessResult
         finalGuessName={finalGuessName}
         guessCorrectness={guessCorrectness}
