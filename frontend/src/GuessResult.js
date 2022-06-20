@@ -4,7 +4,7 @@ const GuessResult = (props) => {
     ? "Nice!"
     : "Oh... roasted...  Try again if you dare!";
   return (
-    <div>
+    <div data-testid="one">
       {props.guessSubmitted ? <h3>{resultText}</h3> : <h3>{blankText}</h3>}
     </div>
   );
