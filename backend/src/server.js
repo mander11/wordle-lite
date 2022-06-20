@@ -4,6 +4,8 @@ import morgan from 'morgan'
 import config from './config'
 import { connect } from './utils/db'
 import cors from 'cors'
+import solutionRouter from './routers/solution.router'
+import guessRouter from './routers/guess.router'
 
 export const app = express()
 
@@ -14,14 +16,8 @@ app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
-app.post('/api/guess', function(req, res) {
-  const ANSWER = 'foo'
-
-  let guess = req.body.guessName
-  let isGuessCorrect = guess === ANSWER
-  console.log(`The current guess is... ${guess}`)
-  return res.send({ isGuessCorrect })
-})
+app.use('/api/solution', solutionRouter)
+app.use('/api/guess', guessRouter)
 
 export const start = async () => {
   try {

@@ -1,0 +1,86 @@
+swagger: "2.0"
+info:
+  description: "API for wordle-lite."
+  version: "1.0.0"
+  title: "Wordle Lite - API"
+host: "localhost:3001"
+basePath: "/api"
+tags:
+  - name: "guess"
+    description: ""
+  - name: "solution"
+    description: ""
+schemes:
+  - "http"
+paths:
+  /guess:
+    post:
+      tags:
+        - "guess"
+      summary: "Guess the wordle of the day"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          schema:
+            $ref: "#/definitions/GuessRequest"
+      responses:
+        "200":
+          description: "Informs user if guess was correct."
+          schema:
+            $ref: "#/definitions/GuessResponse"
+  /solution:
+    post:
+      tags:
+        - "solution"
+      summary: "Create solution."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "What the solution should be created to."
+          schema:
+            $ref: "#/definitions/Solution"
+      responses:
+        "200":
+          description: "Solution successfully updated."
+    put:
+      tags:
+        - "solution"
+      summary: "Update solution."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "What the solution should be changed to."
+          schema:
+            $ref: "#/definitions/Solution"
+      responses:
+        "200":
+          description: "Solution successfully updated."
+definitions:
+  GuessRequest:
+    type: "object"
+    properties:
+      guessName:
+        type: "string"
+        example: "foobar"
+  GuessResponse:
+    type: "object"
+    properties:
+      isGuessCorrect:
+        type: "boolean"
+  Solution:
+    type: "object"
+    properties:
+      solutionValue:
+        type: "string"
