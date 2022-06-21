@@ -10,6 +10,6 @@ export const post = async (req, res) => {
 }
 
 export const postv2 = async (req, res) => {
-  const response = await checkGuess(req.body.guessName);
+  const response = await checkGuess(req.body.guessName)
   return res.send(response)
 }
