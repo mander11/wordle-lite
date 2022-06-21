@@ -32,7 +32,7 @@ paths:
           description: "Informs user if guess was correct."
           schema:
             $ref: "#/definitions/GuessResponse"
-  /v2/guess:
+  /guess/v2:
     post:
       tags:
         - "guess"

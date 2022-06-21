@@ -17,7 +17,7 @@ app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
 
 app.use('/api/solution', solutionRouter)
-app.use('/', guessRouter)
+app.use('/api/guess', guessRouter)
 
 export const start = async () => {
   try {

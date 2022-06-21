@@ -10,7 +10,7 @@ export async function guessIsCorrect(guessName, expectedBool) {
 
 export async function v2guess(guessName, expectedResponse) {
     let response = await request(app)
-        .post('/api/v2/guess')
+        .post('/api/guess/v2')
         .send({ guessName: guessName })
     expect(response.body).toEqual(expectedResponse)
 }
