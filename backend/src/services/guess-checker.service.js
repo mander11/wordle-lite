@@ -1,6 +1,6 @@
-const solutionRepo = require('../repositories/solution.repository')
+import { getCurrentSolution } from '../repositories/solution.repository'
 
-const compare = (guess, solutionValue) => {
+export const compare = (guess, solutionValue) => {
     const comparison = []
     const iterate = [...guess].forEach((letter, index) => {
         const letterResult = {
@@ -13,9 +13,7 @@ const compare = (guess, solutionValue) => {
     return comparison;
 }
 
-const checkGuess = async (guess) => {
-    const currentSolution = await solutionRepo.getCurrentSolution();
+export const checkGuess = async (guess) => {
+    const currentSolution = await getCurrentSolution();
     return compare(guess, currentSolution.solutionValue);
 }
-
-module.exports = { checkGuess, compare }
