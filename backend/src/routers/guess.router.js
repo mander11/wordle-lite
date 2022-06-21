@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import { post } from '../controllers/guess.controller'
+import { post, postv2 } from '../controllers/guess.controller'
 
 const guessRouter = Router()
 
-guessRouter.post('/', post)
+guessRouter.post('/api/guess', post)
+guessRouter.post('/api/v2/guess', postv2)
 
 export default guessRouter

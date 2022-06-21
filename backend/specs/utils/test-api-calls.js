@@ -8,6 +8,13 @@ export async function guessIsCorrect(guessName, expectedBool) {
     expect(response.body).toEqual({ isGuessCorrect: expectedBool })
 }
 
+export async function v2guess(guessName, expectedResponse) {
+    let response = await request(app)
+        .post('/api/v2/guess')
+        .send({ guessName: guessName })
+    expect(response.body).toEqual(expectedResponse)
+}
+
 export async function updateSolutionToBe(newSolution) {
     let response = await request(app)
         .put('/api/solution')

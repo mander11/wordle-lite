@@ -1,10 +1,10 @@
 import { Solution } from '../models/solution.model'
 
-export const createOne = async newSolution => {
+const createOne = async newSolution => {
   return Solution.create(newSolution)
 }
 
-export const updateOne = async _newSolution => {
+const updateOne = async _newSolution => {
   const FIND_ONE_QUERY_FILTER = {}
 
   Solution.findOneAndUpdate(FIND_ONE_QUERY_FILTER, _newSolution, {
@@ -14,8 +14,10 @@ export const updateOne = async _newSolution => {
     .exec()
 }
 
-export const getCurrentSolution = async () => {
+const getCurrentSolution = async () => {
   return Solution.findOne()
     .lean()
     .exec()
 }
+
+module.exports = { createOne, updateOne, getCurrentSolution }
