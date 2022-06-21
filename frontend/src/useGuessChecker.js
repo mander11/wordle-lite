@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export default function useGuessChecker(finalGuess) {
-  const [guessCorrectness, setGuessCorrectness] = useState(false);
+  const [letterResults, setLetterResults] = useState([]);
   const [guessSubmitted, setGuessSubmitted] = useState(false);
 
   useEffect(() => {
@@ -20,10 +20,10 @@ export default function useGuessChecker(finalGuess) {
         },
       });
       const json = await res.json();
-      // setGuessCorrectness(json.isGuessCorrect);
-      // setGuessSubmitted(true);
+      setLetterResults(json);
+      setGuessSubmitted(true);
     }
   }, [finalGuess]);
 
-  return [guessCorrectness, guessSubmitted];
+  return [letterResults, guessSubmitted];
 }

@@ -5,7 +5,7 @@ import useGuessChecker from "./useGuessChecker";
 
 const HomePage = () => {
   const [finalGuessName, setFinalGuessName] = useState("");
-  const [guessCorrectness, guessSubmitted] = useGuessChecker(finalGuessName);
+  const [letterResults, guessSubmitted] = useGuessChecker(finalGuessName);
 
   return (
     <div>
@@ -13,7 +13,7 @@ const HomePage = () => {
       <GuessInput setFinalGuessName={setFinalGuessName} />
       <GuessResult
         guessSubmitted={guessSubmitted}
-        guessCorrectness={guessCorrectness}
+        letterResults={letterResults}
       />
     </div>
   );
