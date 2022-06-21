@@ -9,7 +9,7 @@
         "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
         "test": "jest",
         "test:watch": "test --watch",
-        "cypress": "cypress run --browser chrome"
+        "cyp": "cypress run --browser chrome"
     },
     "author": "Matt Anderson <matthew.anderson11gmail.com>",
     "license": "Apache-2.0",

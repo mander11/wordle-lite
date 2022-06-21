@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+  }
+.container > div {
+flex: 1; /*grow*/
+}
+.letter-exists {
+    background-color: aqua
+}
+.letter-wrong {
+    background-color:red
+}

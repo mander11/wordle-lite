@@ -12,7 +12,7 @@ export default function useGuessChecker(finalGuess) {
     }
 
     async function checkFinalGuess() {
-      const res = await fetch(`http://localhost:3001/api/guess/`, {
+      const res = await fetch(`http://localhost:3001/api/guess/v2/`, {
         method: "POST",
         body: JSON.stringify({ guessName: finalGuess }),
         headers: {
@@ -20,8 +20,8 @@ export default function useGuessChecker(finalGuess) {
         },
       });
       const json = await res.json();
-      setGuessCorrectness(json.isGuessCorrect);
-      setGuessSubmitted(true);
+      // setGuessCorrectness(json.isGuessCorrect);
+      // setGuessSubmitted(true);
     }
   }, [finalGuess]);
 
