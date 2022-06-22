@@ -1,8 +1,9 @@
 const LetterResult = (props) => {
-    const styleClass = props.isPresent ? "letter-exists" : "letter-wrong"
+    const letterStyle = props.isPresent ? "letter-exists" : "letter-wrong"
+    const letterId = "letter-" + props.position
 
     return (
-      <div class={styleClass} id='letter-{props.position}'>
+      <div class={letterStyle} id={letterId}>
         {props.letter}
       </div>
     );
