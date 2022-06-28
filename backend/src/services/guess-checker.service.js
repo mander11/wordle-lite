@@ -6,7 +6,8 @@ export const compare = (guess, solutionValue) => {
     const letterResult = {
       letter: letter,
       position: index,
-      isPresent: solutionValue.includes(letter)
+      isPresent: solutionValue.includes(letter),
+      correctPosition: letter === solutionValue[index]
     }
     comparison.push(letterResult)
   })

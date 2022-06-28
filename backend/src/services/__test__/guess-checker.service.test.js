@@ -1,24 +1,32 @@
 import { compare } from '../guess-checker.service'
 
 describe('Analyze letters of guess', async () => {
-  test('Two letter word, one letter not present', () => {
-    const GUESS_ONE_LETTER_NOT_PRESENT = 'ab'
-    const ANSWER = 'ac'
+  test('Three letter word, one letter not present, one letter exact, one letter present but wrong position', () => {
+    const GUESS = 'azb'
+    const ANSWER = 'abc'
 
     const expectedResults = [
       {
         letter: 'a',
         position: 0,
-        isPresent: true
+        isPresent: true,
+        correctPosition: true
+      },
+      {
+        letter: 'z',
+        position: 1,
+        isPresent: false,
+        correctPosition: false
       },
       {
         letter: 'b',
-        position: 1,
-        isPresent: false
+        position: 2,
+        isPresent: true,
+        correctPosition: false
       }
     ]
 
-    const actualResults = compare(GUESS_ONE_LETTER_NOT_PRESENT, ANSWER)
+    const actualResults = compare(GUESS, ANSWER)
 
     expect(expectedResults).toEqual(actualResults)
   })
