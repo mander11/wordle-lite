@@ -8,6 +8,7 @@ const GuessResult = (props) => {
           key={letterResult.position}
           isPresent={letterResult.isPresent}
           position={letterResult.position}
+          correctPosition={letterResult.correctPosition}
           letter={letterResult.letter}
         />
       ))}

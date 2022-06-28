@@ -6,7 +6,7 @@ describe('Results shown by letter', () => {
             .and('have.class', attributes.htmlClass)
     }
 
-    it('should provide letter feedback for guess of foz when answer is foo', () => {
+    it('should provide letter feedback for guess of ffz when answer is foo', () => {
 
         cy.intercept('POST', '/api/guess/v2', { fixture: 'result_by_letter.json'}).as('resultByLetter')
 
@@ -16,8 +16,8 @@ describe('Results shown by letter', () => {
     
         cy.wait(['@resultByLetter'])
     
-        assertLetterBy({position:0, value:'f', htmlClass:'letter-exists'})
-        assertLetterBy({position:1, value:'o', htmlClass:'letter-exists'})
+        assertLetterBy({position:0, value:'f', htmlClass:'letter-correct'})
+        assertLetterBy({position:1, value:'f', htmlClass:'letter-exists'})
         assertLetterBy({position:2, value:'z', htmlClass:'letter-wrong'})
     })
     

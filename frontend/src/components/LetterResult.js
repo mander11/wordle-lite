@@ -1,5 +1,11 @@
+function getLetterStyle(props) {
+  if (props.correctPosition) return "letter-correct";
+  else if (props.isPresent) return "letter-exists";
+  else return "letter-wrong";
+}
+
 const LetterResult = (props) => {
-  const letterStyle = props.isPresent ? "letter-exists" : "letter-wrong";
+  const letterStyle = getLetterStyle(props);
   const letterId = "letter-" + props.position;
 
   return (

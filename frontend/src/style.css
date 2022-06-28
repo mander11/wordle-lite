@@ -4,6 +4,9 @@
 .container > div {
     flex: 1; 
 }
+.letter-correct {
+    background-color: white;
+}
 .letter-exists {
     background-color: aqua
 }

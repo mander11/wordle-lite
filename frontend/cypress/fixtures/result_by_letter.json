@@ -2,16 +2,19 @@
     {
         "letter": "f",
         "position": 0,
-        "isPresent": true
+        "isPresent": true,
+        "correctPosition": true 
     },
     {
-        "letter": "o",
+        "letter": "f",
         "position": 1,
-        "isPresent": true
+        "isPresent": true,
+        "correctPosition": false 
     },
     {
         "letter": "z",
         "position": 2,
-        "isPresent": false
+        "isPresent": false,
+        "correctPosition": false 
     }
 ]
