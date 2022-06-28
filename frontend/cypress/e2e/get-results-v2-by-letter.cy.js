@@ -23,4 +23,3 @@ describe('Results shown by letter', () => {
     
 })
 
-
