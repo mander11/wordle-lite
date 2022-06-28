@@ -112,6 +112,9 @@ definitions:
         isPresent:
           type: "boolean"
           example: true
+        correctPosition:
+          type: "boolean"
+          example: false
   Solution:
     type: "object"
     properties:
