@@ -1,9 +1,14 @@
+import classNames from "classnames";
+
 const LetterResult = (props) => {
-  const letterStyle = props.isPresent ? "letter-exists" : "letter-wrong";
+  const letterClass = classNames({
+    "letter-exists": props.isPresent,
+    "letter-wrong": !props.isPresent,
+  });
   const letterId = "letter-" + props.position;
 
   return (
-    <div className={letterStyle} id={letterId}>
+    <div className={letterClass} id={letterId}>
       {props.letter}
     </div>
   );
