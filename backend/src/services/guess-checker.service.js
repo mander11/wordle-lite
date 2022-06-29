@@ -2,10 +2,9 @@ import { getCurrentSolution } from '../repositories/solution.repository'
 
 export const compare = (guess, solutionValue) => {
   const comparison = []
-  guess.split('').forEach((letter, index) => {
+  guess.split('').forEach((letter) => {
     const letterResult = {
       letter: letter,
-      position: index,
       isPresent: solutionValue.includes(letter)
     }
     comparison.push(letterResult)

@@ -3,11 +3,11 @@ import LetterResult from "./LetterResult";
 const GuessResult = (props) => {
   return (
     <div className="container">
-      {props.letterResults.map((letterResult) => (
+      {props.letterResults.map((letterResult, index) => (
         <LetterResult
-          key={letterResult.position}
+          key={index}
           isPresent={letterResult.isPresent}
-          position={letterResult.position}
+          position={index}
           letter={letterResult.letter}
         />
       ))}

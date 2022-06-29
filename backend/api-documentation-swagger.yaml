@@ -106,9 +106,6 @@ definitions:
         letter:
           type: "string"
           example: "a"
-        position:
-          type: "int"
-          example: 0
         isPresent:
           type: "boolean"
           example: true
