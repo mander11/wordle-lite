@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-const LetterResult = (props) => {
+export const LetterResult = (props) => {
   const letterClass = classNames({
     "letter-exists": props.isPresent,
     "letter-wrong": !props.isPresent,
@@ -13,5 +13,3 @@ const LetterResult = (props) => {
     </div>
   );
 };
-
-export default LetterResult;

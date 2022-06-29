@@ -1,22 +1,23 @@
-import { useState } from "react";
-import GuessInput from "../components/GuessInput";
-import GuessResult from "../components/GuessResult.js";
-import useGuessChecker from "../hooks/useGuessChecker";
+import { useState, useEffect } from "react";
+import { GuessInput } from "../components/GuessInput";
+import { GuessResult } from "../components/GuessResult.js";
+import { submitGuess } from "../services/submitGuess";
 
-const HomePage = () => {
+export const HomePage = () => {
   const [finalGuessName, setFinalGuessName] = useState("");
-  const [letterResults, guessSubmitted] = useGuessChecker(finalGuessName);
+  const [letterResults, setLetterResults] = useState([]);
+
+  useEffect(async () => {
+    const guessResponse = await submitGuess(finalGuessName);
+    const responseAsJson = await guessResponse.json();
+    setLetterResults(responseAsJson);
+  }, [finalGuessName]);
 
   return (
     <div>
       <h2>Try to guess the wordle of the day!</h2>
       <GuessInput setFinalGuessName={setFinalGuessName} />
-      <GuessResult
-        guessSubmitted={guessSubmitted}
-        letterResults={letterResults}
-      />
+      <GuessResult letterResults={letterResults} />
     </div>
   );
 };
-
-export default HomePage;

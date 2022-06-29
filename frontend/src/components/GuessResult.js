@@ -1,6 +1,6 @@
-import LetterResult from "./LetterResult";
+import { LetterResult } from "./LetterResult";
 
-const GuessResult = (props) => {
+export const GuessResult = (props) => {
   return (
     <div className="container">
       {props.letterResults.map((letterResult, index) => (
@@ -14,5 +14,3 @@ const GuessResult = (props) => {
     </div>
   );
 };
-
-export default GuessResult;

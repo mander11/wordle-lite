@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GuessInput = ({ setFinalGuessName }) => {
+export const GuessInput = (props) => {
   const [guessName, setGuessName] = useState("");
 
   return (
@@ -8,9 +8,7 @@ const GuessInput = ({ setFinalGuessName }) => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          {
-            setFinalGuessName(guessName);
-          }
+          props.setFinalGuessName(guessName);
         }}
       >
         <input
@@ -20,9 +18,6 @@ const GuessInput = ({ setFinalGuessName }) => {
           name="guessName"
           onChange={(e) => {
             setGuessName(e.target.value);
-            {
-              setFinalGuessName("");
-            }
           }}
         />
         <button type="submit">Submit</button>
@@ -30,5 +25,3 @@ const GuessInput = ({ setFinalGuessName }) => {
     </div>
   );
 };
-
-export default GuessInput;
