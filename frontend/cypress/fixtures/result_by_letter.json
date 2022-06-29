@@ -1,0 +1,14 @@
+[
+    {
+        "letter": "f",
+        "isPresent": true
+    },
+    {
+        "letter": "o",
+        "isPresent": true
+    },
+    {
+        "letter": "z",
+        "isPresent": false
+    }
+]
