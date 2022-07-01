@@ -38,6 +38,7 @@ export function Counter() {
       </div>
       <div className={styles.row}>
         <input
+          id="wordle-input-box"
           className={styles.textbox}
           aria-label="Set increment amount"
           value={incrementAmount}
